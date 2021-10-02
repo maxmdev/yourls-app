@@ -14,21 +14,21 @@
 $dbURL = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $db = substr($dbURL["path"], 1);
 
-var_dump($db["host"]);
+var_dump($dbURL["host"]);
 
 /** MySQL database username */
-define( 'YOURLS_DB_USER', $db["user"] );
+define( 'YOURLS_DB_USER', $dbURL["user"] );
 
 /** MySQL database password */
-define( 'YOURLS_DB_PASS', $db["pass"] );
+define( 'YOURLS_DB_PASS', $dbURL["pass"] );
 
 /** The name of the database for YOURLS
  ** Use lower case letters [a-z], digits [0-9] and underscores [_] only */
-define( 'YOURLS_DB_NAME', $db["path"] );
+define( 'YOURLS_DB_NAME', $dbURL["path"] );
 
 /** MySQL hostname.
  ** If using a non standard port, specify it like 'hostname:port', e.g. 'localhost:9999' or '127.0.0.1:666' */
-define( 'YOURLS_DB_HOST', $db["host"]);
+define( 'YOURLS_DB_HOST', $dbURL["host"]);
 
 /** MySQL tables prefix
  ** YOURLS will create tables using this prefix (eg `yourls_url`, `yourls_options`, ...)

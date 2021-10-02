@@ -11,17 +11,16 @@
  */
 
 /** Defines HEROKU DB */
-$db = parse_url(getenv("DATABASE_URL"));
-$db["path"] = ltrim($db["path"], "/");
-$dbURL = $db["host"] . ":" . $db["port"];
+$dbURL = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$db = substr($url["path"], 1);
 
-var_dump($db["username"]);
+var_dump($db["host"]);
 
 /** MySQL database username */
-define( 'YOURLS_DB_USER', $db["username"] );
+define( 'YOURLS_DB_USER', $db["user"] );
 
 /** MySQL database password */
-define( 'YOURLS_DB_PASS', $db["password"] );
+define( 'YOURLS_DB_PASS', $db["pass"] );
 
 /** The name of the database for YOURLS
  ** Use lower case letters [a-z], digits [0-9] and underscores [_] only */
@@ -29,7 +28,7 @@ define( 'YOURLS_DB_NAME', $db["path"] );
 
 /** MySQL hostname.
  ** If using a non standard port, specify it like 'hostname:port', e.g. 'localhost:9999' or '127.0.0.1:666' */
-define( 'YOURLS_DB_HOST', $dbURL);
+define( 'YOURLS_DB_HOST', $db["host"]);
 
 /** MySQL tables prefix
  ** YOURLS will create tables using this prefix (eg `yourls_url`, `yourls_options`, ...)

@@ -15,6 +15,8 @@ $dbURL = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $db = substr($dbURL["path"], 1);
 
 var_dump($dbURL["host"]);
+var_dump($dbURL["user"]);
+var_dump($dbURL["pass"]);
 
 /** MySQL database username */
 define( 'YOURLS_DB_USER', $dbURL["user"] );

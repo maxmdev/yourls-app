@@ -13,7 +13,7 @@
 /** Defines HEROKU DB */
 $db = parse_url(getenv("DATABASE_URL"));
 $db["path"] = ltrim($db["path"], "/");
-$dbURL = $db["host"] : $db["port"];
+$dbURL = $db["host"] . ":" . $db["port"];
 
 var_dump($dbURL);
 

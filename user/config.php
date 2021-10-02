@@ -12,7 +12,7 @@
 
 /** Defines HEROKU DB */
 $dbURL = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$db = substr($url["path"], 1);
+$db = substr($dbURL["path"], 1);
 
 var_dump($db["host"]);
 

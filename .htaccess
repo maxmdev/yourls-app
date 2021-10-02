@@ -1,4 +1,6 @@
 # BEGIN YOURLS
+DirectoryIndex edit.html
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /

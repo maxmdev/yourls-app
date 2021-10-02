@@ -26,7 +26,7 @@ define( 'YOURLS_DB_PASS', $dbURL["pass"] );
 
 /** The name of the database for YOURLS
  ** Use lower case letters [a-z], digits [0-9] and underscores [_] only */
-define( 'YOURLS_DB_NAME', $dbURL["path"] );
+define( 'YOURLS_DB_NAME', $db );
 
 /** MySQL hostname.
  ** If using a non standard port, specify it like 'hostname:port', e.g. 'localhost:9999' or '127.0.0.1:666' */

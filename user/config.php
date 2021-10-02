@@ -13,6 +13,7 @@
 /** Defines HEROKU DB */
 $db = parse_url(getenv("DATABASE_URL"));
 $db["path"] = ltrim($db["path"], "/");
+var_dump($db["host"]);
 
 /** MySQL database username */
 define( 'YOURLS_DB_USER', $db["username"] );

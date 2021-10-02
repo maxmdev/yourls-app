@@ -15,7 +15,7 @@ $db = parse_url(getenv("DATABASE_URL"));
 $db["path"] = ltrim($db["path"], "/");
 $dbURL = $db["host"] . ":" . $db["port"];
 
-var_dump($dbURL);
+var_dump($db["username"]);
 
 /** MySQL database username */
 define( 'YOURLS_DB_USER', $db["username"] );
@@ -29,7 +29,7 @@ define( 'YOURLS_DB_NAME', $db["path"] );
 
 /** MySQL hostname.
  ** If using a non standard port, specify it like 'hostname:port', e.g. 'localhost:9999' or '127.0.0.1:666' */
-define( 'YOURLS_DB_HOST', ltrim($db["host"]));
+define( 'YOURLS_DB_HOST', $dbURL);
 
 /** MySQL tables prefix
  ** YOURLS will create tables using this prefix (eg `yourls_url`, `yourls_options`, ...)
